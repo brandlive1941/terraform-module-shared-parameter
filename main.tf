@@ -11,7 +11,7 @@ resource "aws_ram_resource_association" "ssm_parameter_path_associations" {
 
 # Associate the Organizational Unit (OU) as a principal to the RAM share
 resource "aws_ram_principal_association" "ou_principal_association" {
-  resource_share_arn = aws_ram_resource_share.ssm_parameter_share.arn
+  resource_share_arn = var.ram_resource_share_arn
   # The principal ARN for an OU is: arn:aws:organizations::<master_account_id>:ou/<org_id>/<ou_id>
   # Assuming the target_ou_id variable directly provides the OU ID part (e.g., "ou-xxxx-xxxxxxxx")
   principal  = var.target_ou_arn
