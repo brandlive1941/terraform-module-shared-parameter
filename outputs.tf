@@ -1,5 +1,5 @@
-output "ssm_parameter_share_arn" {
+output "ssm_parameter_arns" {
   description = "The ARN of the created SSM parameter share."
-  value       = aws_ram_resource_association.ssm_parameter_path_associations[*].resource_share_arn
+  value       = var.ssm_paths_to_share
 }
 
