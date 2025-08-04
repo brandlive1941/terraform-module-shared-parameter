@@ -10,5 +10,5 @@ variable "target_ou_arn" {
 
 variable "ssm_paths_to_share" {
   description = "A map where keys are service names and values are objects containing a list of environments to share for that service."
-  type = list(string)
+  type        = list(string)
 }
